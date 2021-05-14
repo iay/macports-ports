@@ -5,8 +5,8 @@ PortSystem          1.0
 PortGroup           compiler_blacklist_versions 1.0
 
 name                openssh
-version             8.4p1
-revision            4
+version             8.6p1
+revision            0
 categories          net
 platforms           darwin
 maintainers         nomaintainer
@@ -29,9 +29,9 @@ long_description    OpenSSH is a FREE version of the SSH protocol suite of \
 
 homepage            https://www.openbsd.org/openssh/
 
-checksums           rmd160  2d3eec0b56f7edef5d50b8defa2f143ffee5c65a \
-                    sha256  5a01d22e407eb1c05ba8a8f7c654d388a13e9f226e4ed33bd38748dafa1d2b24 \
-                    size    1742201
+checksums           rmd160  4c836ec10ca5e8b1b43c4e99b913837e70b4ce64 \
+                    sha256  c3e6e4da1621762c850d03b47eed1e48dff4cc9608ddeb547202a234df8ed7ae \
+                    size    1786328
 
 master_sites        openbsd:OpenSSH/portable \
                     ftp://ftp.cise.ufl.edu/pub/mirrors/openssh/portable/ \
@@ -52,9 +52,6 @@ if {${name} eq ${subport}} {
                         patch-sandbox-darwin.c-apple-sandbox-named-external.diff \
                         patch-sshd.c-apple-sandbox-named-external.diff \
                         macports-config.patch
-
-    # OpenBSD patch for CVE-2021-28041, remove after upgrading to >= 8.5p1
-    patchfiles-append   patch-zz-8.4-CVE-2021-28041.diff
 
     # We need a couple of patches
     # - pam.patch
